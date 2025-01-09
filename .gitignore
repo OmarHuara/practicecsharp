@@ -1,0 +1,38 @@
+# Compilação e Arquivos Binários
+bin/
+obj/
+
+# Configurações do Visual Studio
+.vs/
+.vscode/
+
+
+# Pacotes e Dependências
+packages/
+
+# Build do .NET
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Configurações do Sistema Operacional
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Arquivos do Rider (JetBrains IDE)
+.idea/
+*.sln.iml
+
+# Arquivos de Publicação
+publish/
+*.publishsettings
+
+# Testes e Cobertura
+TestResults/
+*.coverage
+*.coveragexml
+
+# Arquivos Temporários do MSBuild
+*.tlog
+
