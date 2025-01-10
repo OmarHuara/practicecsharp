@@ -1,6 +1,9 @@
 # Compilação e Arquivos Binários
 ExerciciosESX/bin/
-obj/
+ExerciciosEsx/obj/
+
+ExerciciosESxTests/bin/
+ExerciciosESxTests/obj/
 
 # Configurações do Visual Studio
 .vs/

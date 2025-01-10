@@ -149,7 +149,8 @@ namespace ExerciciosESX.Menu
             Console.WriteLine("Enter String: ");
             string word = Console.ReadLine();
             Console.WriteLine("The word has: ");
-            exercisesP.countChar(word);
+            Dictionary<char, int> wordsCounted = exercisesP.countChar(word);
+            exercisesP.showLetters(wordsCounted);
         }
         private void HandleLargestElement()
         {

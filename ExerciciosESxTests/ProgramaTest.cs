@@ -7,7 +7,7 @@ namespace ExerciciosESxTests
     public sealed class ProgramaTest
     {
         [TestMethod]
-        public void CheckEvenTestNumber()
+        public void CheckEvenNumberTest()
         {
             ExercisesP chechEvenNumber = new ExercisesP();
             int evenNumber = 2;
@@ -17,7 +17,7 @@ namespace ExerciciosESxTests
         }
 
         [TestMethod]
-        public void CheckOddTestNumber()
+        public void CheckOddNumberTest()
         {
             ExercisesP chechOddNumber = new ExercisesP();
             int oddNumber = 3;
@@ -72,15 +72,51 @@ namespace ExerciciosESxTests
         {
             ExercisesP exercisesP = new ExercisesP();
             string inputWord = "Chocolate";
-            string expectedOutput = "\n[c][2]\n[h][1]\n[o][2]\n[l][1]\n[a][1]\n[t][1]\n[e][1]\n";
+            var expectedCounts = new Dictionary<char, int>
+            {
+                {'c', 2 },
+                {'h', 1 },
+                {'o', 2 },
+                {'l', 1 },
+                {'a', 1 },
+                {'t', 1 },
+                {'e', 1 }
+            };
 
-            var output = new StringWriter();
-            Console.SetOut(output);
+            var result = exercisesP.countChar(inputWord);
+            CollectionAssert.AreEqual(expectedCounts, result, "The character count is incorrect");
+        }
 
-            exercisesP.countChar(inputWord);
+        [TestMethod]
+        public void biggerNumberTest()
+        {
+            ExercisesP exercises = new ExercisesP();
+            List<int> numbers = new List<int>();
+            numbers.Add(10);
+            numbers.Add(2);
+            numbers.Add(30);
+            int expected = 30;
+            int result = exercises.biggerNumber(numbers);
+            Assert.AreEqual(expected, result);
+        }
 
-            Assert.AreEqual(expectedOutput, output.ToString());
+        [TestMethod]
+        public void orderingListTest()
+        {
+            ExercisesP exercises = new ExercisesP();
+            List<string> names = new List<string>();
+            names.Add("John");
+            names.Add("Fulano");
+            names.Add("Pepito");
+            names.Add("Oscar");
 
+            List<string> orderedNames = new List<string>();
+            orderedNames.Add("Fulano");
+            orderedNames.Add("John");
+            orderedNames.Add("Oscar");
+            orderedNames.Add("Pepito");
+            List<String> result = exercises.orderingList(names);
+            CollectionAssert.AreEqual(orderedNames, result);
         }
     }
 }

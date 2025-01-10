@@ -62,7 +62,7 @@ namespace ExerciciosESX.Exercicios
                 Console.Write($"[ {vector[i]} ]");
             }
         }
-        public void countChar(String word)
+        public Dictionary<char, int> countChar(String word)
         {
             String wordLower = word.ToLower();
             char[] vectorLettersWord = wordLower.ToCharArray();
@@ -80,9 +80,9 @@ namespace ExerciciosESX.Exercicios
                 }
             } 
 
-            showLetters(charCounts);
+            return charCounts;
         }
-        private void showLetters(Dictionary<char, int> charCounts)
+        public void showLetters(Dictionary<char, int> charCounts)
         {
             foreach(var entry in charCounts)
             {
@@ -94,11 +94,11 @@ namespace ExerciciosESX.Exercicios
         {
             return numbers.Max();
         }
-        internal List<string> orderingList(List<string> names)
+        public List<string> orderingList(List<string> names)
         { 
             return names.OrderBy(x => x).ToList();
         }
-        internal void showVector(List<string> orderedList)
+        public void showVector(List<string> orderedList)
         {
             foreach (var pair in orderedList)
             {
